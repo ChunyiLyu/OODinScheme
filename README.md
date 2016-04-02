@@ -6,7 +6,7 @@ well as create instances. While developing this project, I have used instruction
 assignment from the book “Structure and Interpretation of Computer Programs”, which can be
 found in here: https://mitpress.mit.edu/sicp/psets/ps7oop/readme.html
 
-1. Define Class
+## Define Class
   A ‘define-class’ special expression takes in the name of the class, a list of superclass
 which the class inherits from, and zero or more names for slots (the instance variables). Every
 class has to have at least one super class. There is a predefined class ‘object’, and any other class
@@ -29,7 +29,7 @@ subclass of “cat”, named “house-cat”. Classes will be stored as lists in
 type-checking. Second thing is the name of the class. The third element is a list of the class’s
 superclasses. The forth element is a list of all of the slots’ names of the class.
 
-2. Define Method
+## Define Method
   A ‘define-method’ special expression takes in the name of the method, name of the class
 that this method can be applied to, and an lambda-exp. Names of methods are stored the same as
 names of classes, so their have to be unique, and classes and methods could not share the same
@@ -46,7 +46,7 @@ lambda expression has to have ‘self’ as the first parameter.
 the name of the method. The third is the class that this method belongs to. Then it follows by the
 lambda expression.
 
-3. Create Instance
+## Create Instance
   Users can create instances by the ‘make’ expression. The expression takes name of a
 class, and then slots’ names and values pairs. For example, if we would like to create an instance
 belongs to class ‘cat’, we can do:
@@ -57,7 +57,7 @@ belongs to class ‘cat’, we can do:
   The list has ‘instance’ as the first element, then follows by the class of the instance, as well as a
 list of slots’ values, which corresponds to the order of slots’ names in the definition of the class.
 
-4. Apply method
+## Apply method
 When applying a method to an instance, we need to use the ‘tell’ expression. It takes the
 instance’s name, name of the method, and zero or more extra arguments. If we want to know
 what breed that the cat ‘neko’ is:
@@ -68,7 +68,7 @@ belongs to the class that the method is bonded to. In this case, the method ‘b
 defined on class ‘cat’. Since the class of ‘neko’ is ‘house-cat’ and ‘house-cat’ is a subclass of
 ‘cat’, we can apply ‘breed?’ to the instance ‘neko’.
 
-4. Set Expression
+## Set Expression
 Set expression needs to take three arguments. It takes the name of the instance, name of
 the slot, and the new value you want to assign to the slot. This expression will always return the
 updated instance value.
@@ -96,7 +96,7 @@ returns a list, with ‘update-instance’ as the first element. If it does, it 
 is a set expression, and the interpreter will update the value of the instance by the cdr of returned
 value (not including the notation ‘update-instance’).
 
-5. ToDos and Current Problems
+## ToDos and Current Problems
   Since methods and classes are all stored together in the top level. Methods could not have
 same names, even if they are for different classes. I think it will be more intuitive if the
 interpreter could handle methods with the same name but belong to different class. In addition to
